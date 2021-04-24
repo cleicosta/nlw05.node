@@ -20,11 +20,11 @@ class SettingsController {
             const settings = await settingsService.findByUsername(username);
             return response.json(settings);
         }
-        async update(request:Request, response:Response){
-            const {username} = request.params;
-            const {chat} = request.body;
+        async update(request: Request, response: Response){
+            const { username } = request.params;
+            const { chat } = request.body;
             const settingsService = new SettingService();
-            const settings = await settingsService.update(username,chat);
+            const settings = await settingsService.update(username, chat);
             return response.json(settings);
         }
     }
